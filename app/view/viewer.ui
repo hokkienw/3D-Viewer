@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Viewer</class>
+ <widget class="QMainWindow" name="Viewer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>879</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Viewer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0.12381 rgba(252, 217, 66, 128), stop:0.32381 rgba(203, 192, 135, 128), stop:0.604762 rgba(175, 179, 179, 128), stop:0.880952 rgba(81, 87, 89, 179));
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QDoubleSpinBox" name="scale">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>30</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>0.010000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.100000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Scale</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Rotate</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Move</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTipDuration">
+     <number>0</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(84, 167, 82);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Open</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="x_position">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="z_position">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>70</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="y_position">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-99.989999999999995</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="z_angle">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>70</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="y_angle">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>50</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="x_angle">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>30</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lines_color">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(48, 128, 239);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Line 
+ Color</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(84, 167, 82);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(84, 167, 82);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Make gif</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="projection_type">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>60</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+	background-color: rgb(126, 126, 123);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Paralel</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Central</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="line_type">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>30</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+	background-color: rgb(48, 128, 239);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Solid</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dotted</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No lines</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>0</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Line settings</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="line_width">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>60</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(48, 128, 239);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="maximum">
+     <double>7.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vertex_color">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>30</y>
+      <width>91</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(247, 190, 51);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Vertex
+ Color</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="scale_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>60</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QDoubleSpinBox {
+	background-color: rgb(247, 190, 51);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="maximum">
+     <double>20.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>0</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Vertex settings</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="vertex_type">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>30</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+	background-color: rgb(247, 190, 51);
+    font: bold 12pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Square</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Circle</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>No vertex</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="background_color">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>30</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	background-color: rgb(233, 70, 55);
+    font: bold 18pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}
+QPushButton:hover {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0.204762 rgba(155, 155, 155, 164));
+}</string>
+    </property>
+    <property name="text">
+     <string>Background
+ Color</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>0</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 14pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Background settings </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>690</y>
+      <width>361</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 10pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>690</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 10pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string> Кол-во  граней:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="openGLWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>90</y>
+      <width>881</width>
+      <height>601</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>690</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	background-color: rgb(126, 126, 123);
+    font: bold 10pt &quot;Arial&quot;;
+    color: #ffffff;
+	border: 1px solid rgb(82, 83, 79);
+	padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string> Кол-во вершин:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>scale</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>x_position</zorder>
+   <zorder>z_position</zorder>
+   <zorder>y_position</zorder>
+   <zorder>z_angle</zorder>
+   <zorder>y_angle</zorder>
+   <zorder>x_angle</zorder>
+   <zorder>lines_color</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>projection_type</zorder>
+   <zorder>line_type</zorder>
+   <zorder>label_6</zorder>
+   <zorder>line_width</zorder>
+   <zorder>vertex_color</zorder>
+   <zorder>scale_3</zorder>
+   <zorder>label_7</zorder>
+   <zorder>vertex_type</zorder>
+   <zorder>background_color</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label</zorder>
+   <zorder>label_15</zorder>
+   <zorder>openGLWidget</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
